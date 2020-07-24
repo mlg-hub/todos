@@ -1,5 +1,6 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { ITodo } from 'src/app/interfaces/todo';
+import { TodoService } from 'src/app/todo.service';
 
 @Component({
   selector: 'app-top-component',
@@ -11,7 +12,7 @@ import { ITodo } from 'src/app/interfaces/todo';
 export class TopComponentComponent implements OnInit {
   @Output() toDoComing = new EventEmitter<ITodo>();
 
-  constructor() { }
+  constructor(private todoService: TodoService) { }
   time = '';
   description = '';
   myTodo: ITodo;

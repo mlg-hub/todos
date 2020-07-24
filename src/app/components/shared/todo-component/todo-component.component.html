@@ -1,5 +1,16 @@
  <li class="list-group-item mb-2">
-   {{myTodo?.description}} / {{myTodo?.time}}
-   <i class="btn btn-success ml-3">add</i>
+   <div *ngIf="!isEditMode">
+     {{myTodo?.description}} / {{myTodo?.time}}
+     <i class="btn btn-success ml-3">done</i>
+     <i (click)="edit()" class="btn btn-warning ml-3">edit</i>
+   </div>
+   <!-- when on edit mode -->
+   <div style="max-width: 300px;
+    display: flex;
+    justify-content: space-around;" *ngIf="isEditMode">
+     <input class="form-control" [(ngModel)]="myTodo.description" /> /
+     <input class="form-control" [(ngModel)]="myTodo.time" />
+     <i (click)="save()" class="btn btn-warning ml-3">save</i>
+   </div>
 
  </li>
