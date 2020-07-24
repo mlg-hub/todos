@@ -9,21 +9,20 @@ import { ITodo } from 'src/app/interfaces/todo';
 
 // toDoComing -> app.com -> btm
 export class TopComponentComponent implements OnInit {
-
-  myAddTodo: ITodo = {
-    description: '',
-    time: '',
-  };
   @Output() toDoComing = new EventEmitter<ITodo>();
 
   constructor() { }
+  time = '';
+  description = '';
+  myTodo: ITodo;
 
   ngOnInit(): void {
   }
 
   ajouterTodo(): void {
-    console.log('this is the result', this.myAddTodo);
-    this.toDoComing.emit(this.myAddTodo);
+    this.myTodo = { description: this.description, time: this.time };
+    // console.log('this is the result', this.myAddTodo);
+    this.toDoComing.emit(this.myTodo);
   }
 
 }
