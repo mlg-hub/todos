@@ -1,8 +1,8 @@
 <div class="container-fluid">
   <!-- header -->
-  <app-top-component></app-top-component>
+  <app-top-component (toDoComing)="sendtoBtm($event)"></app-top-component>
   <!-- end header -->
   <!-- todos area -->
-  <app-btm-component></app-btm-component>
+  <app-btm-component [todoFromParent]="todoFromTop"></app-btm-component>
   <!-- end todos area -->
 </div>

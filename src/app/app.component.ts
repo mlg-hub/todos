@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ITodo } from './interfaces/todo';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,10 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'todos';
+  todoFromTop: ITodo;
+
+  sendtoBtm(todoEvent: ITodo) {
+    this.todoFromTop = todoEvent;
+    console.log('after event this the result', todoEvent);
+  }
 }

@@ -1,7 +1,9 @@
 <div class="d-flex justify-content-center" style="margin: 2rem; padding: 2rem;">
   <div class="form-group">
-    <input placeholder="description..." style="width: 30vw;" class="form-control" />
-    <input placeholder="time..." style="width: 30vw;" class="form-control" />
-    <button class="btn btn-info" style="margin-top: 1rem;">Ajouter</button>
+    <input [(ngModel)]="myAddTodo.description" placeholder="description..." style="width: 30vw;" class="form-control" />
+    <input [(ngModel)]="myAddTodo.time" placeholder="time..." style="width: 30vw;" class="form-control" />
+
+    <button (click)="ajouterTodo()" class="btn btn-info" style="margin-top: 1rem;">Ajouter</button>
+
   </div>
 </div>
