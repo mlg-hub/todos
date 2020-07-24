@@ -1,7 +1,7 @@
  <li class="list-group-item mb-2">
    <div *ngIf="!isEditMode">
      {{myTodo?.description}} / {{myTodo?.time}}
-     <i class="btn btn-success ml-3">done</i>
+     <i (click)="done()" class="btn btn-success ml-3">done</i>
      <i (click)="edit()" class="btn btn-warning ml-3">edit</i>
    </div>
    <!-- when on edit mode -->

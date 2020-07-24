@@ -18,6 +18,8 @@ export class LeftComponentComponent implements OnInit {
     });
   }
 
-
+  saveFiniTodo(finiTodo: ITodo): void {
+    this.todoService.saveTerminateTodos(finiTodo);
+  }
 
 }

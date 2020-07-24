@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { ITodo } from 'src/app/interfaces/todo';
 
 @Component({
@@ -9,6 +9,7 @@ import { ITodo } from 'src/app/interfaces/todo';
 
 export class TodoComponentComponent implements OnInit {
 
+  @Output() finiTodo = new EventEmitter<ITodo>();
   @Input() myTodo: ITodo;
   constructor() { }
   isEditMode = false;
@@ -20,6 +21,9 @@ export class TodoComponentComponent implements OnInit {
   }
   save() {
     this.isEditMode = !this.isEditMode;
+  }
+  done() {
+    this.finiTodo.emit(this.myTodo);
   }
 
 }
