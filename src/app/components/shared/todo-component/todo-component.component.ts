@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { ITodo } from 'src/app/interfaces/todo';
 
 @Component({
@@ -9,10 +9,7 @@ import { ITodo } from 'src/app/interfaces/todo';
 
 export class TodoComponentComponent implements OnInit {
 
-  myTodo = {
-    description: 'test ibi',
-    time: '10h',
-  };
+  @Input() myTodo: ITodo;
   constructor() { }
 
   ngOnInit(): void {

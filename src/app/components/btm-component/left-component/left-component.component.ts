@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, OnChanges } from '@angular/core';
 import { ITodo } from 'src/app/interfaces/todo';
 
 @Component({
@@ -12,5 +12,6 @@ export class LeftComponentComponent implements OnInit {
   @Input() todoFromPapa: ITodo[];
   ngOnInit(): void {
   }
+
 
 }

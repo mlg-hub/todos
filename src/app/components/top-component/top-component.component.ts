@@ -20,9 +20,14 @@ export class TopComponentComponent implements OnInit {
   }
 
   ajouterTodo(): void {
+
     this.myTodo = { description: this.description, time: this.time };
     // console.log('this is the result', this.myAddTodo);
-    this.toDoComing.emit(this.myTodo);
+    if (!!this.myTodo.description && !!this.myTodo.time) {
+      this.toDoComing.emit(this.myTodo);
+      this.time = '';
+      this.description = '';
+    }
   }
 
 }

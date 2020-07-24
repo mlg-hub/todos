@@ -8,7 +8,7 @@ import { ITodo } from 'src/app/interfaces/todo';
 })
 export class BtmComponentComponent implements OnInit, OnChanges {
   @Input() todoFromParent: ITodo;
-  todoArray: ITodo[] = new Array();
+  todoArray: ITodo[] = [];
 
   constructor() {
   }
@@ -24,7 +24,12 @@ export class BtmComponentComponent implements OnInit, OnChanges {
   }
 
   insertIntoTodos(newTodo: ITodo): void {
-    this.todoArray.push(newTodo);
+    if (this.todoArray.length >= 2) {
+      alert("cant add more");
+    } else {
+      this.todoArray.push(newTodo);
+    }
+
   }
 
 }
