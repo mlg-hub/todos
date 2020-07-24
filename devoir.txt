@@ -1,0 +1,5 @@
+1. apres avoir clicker sur 'done'; supprimer le todo du left et
+afficher le sur le right;
+2. le btn 'done' du right deviendra 'supprimer' et aura les class 'btn btn danger';
+3. restaurer le todo au cas où il a ete choisi par erreur sur 'done'; supprimer le todo
+excellence: par excellence restaurer le todo aà sa position d'origine;
