@@ -1,42 +1,8 @@
 <div class="container-fluid">
   <!-- header -->
-  <div class="d-flex justify-content-center" style="margin: 2rem; padding: 2rem;">
-    <div class="form-group">
-      <input style="width: 30vw;" class="form-control" />
-      <button class="btn btn-info" style="margin-top: 1rem;">Ajouter</button>
-    </div>
-  </div>
+  <app-top-component (toDoComing)="sendtoBtm($event)"></app-top-component>
   <!-- end header -->
   <!-- todos area -->
-  <div class="d-flex bg-light justify-content-around" style="width: 80%;margin: auto;padding:1rem;">
-    <div class="">
-      <h5 class="title">My todo list</h5>
-      <ul class="list-group list-group-flush">
-        <li class="list-group-item mb-2">
-
-          Dapibus ac facilisis in <i class="btn btn-success ml-3">add</i>
-
-        </li>
-        <li class="list-group-item">Dapibus ac facilisis in</li>
-        <li class="list-group-item">Morbi leo risus</li>
-        <li class="list-group-item">Porta ac consectetur ac</li>
-        <li class="list-group-item">Vestibulum at eros</li>
-      </ul>
-    </div>
-    <div class="">
-      <h5 class="title">My done todo list</h5>
-      <ul class="list-group list-group-flush">
-        <li class="list-group-item mb-2">
-
-          Dapibus ac facilisis in <i class="btn btn-success ml-3">add</i>
-
-        </li>
-        <li class="list-group-item">Dapibus ac facilisis in</li>
-        <li class="list-group-item">Morbi leo risus</li>
-        <li class="list-group-item">Porta ac consectetur ac</li>
-        <li class="list-group-item">Vestibulum at eros</li>
-      </ul>
-    </div>
-  </div>
+  <app-btm-component [todoFromParent]="todoFromTop"></app-btm-component>
   <!-- end todos area -->
 </div>
