@@ -9,23 +9,20 @@ import { TodoService } from 'src/app/todo.service';
 })
 
 // toDoComing -> app.com -> btm
-export class TopComponentComponent implements OnInit {
-  @Output() toDoComing = new EventEmitter<ITodo>();
+export class TopComponentComponent {
+
 
   constructor(private todoService: TodoService) { }
   time = '';
   description = '';
   myTodo: ITodo;
 
-  ngOnInit(): void {
-  }
-
   ajouterTodo(): void {
 
     this.myTodo = { description: this.description, time: this.time };
     // console.log('this is the result', this.myAddTodo);
     if (!!this.myTodo.description && !!this.myTodo.time) {
-      this.toDoComing.emit(this.myTodo);
+      this.todoService.addToMytodo(this.myTodo);
       this.time = '';
       this.description = '';
     }

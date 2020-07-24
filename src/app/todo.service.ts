@@ -1,17 +1,17 @@
 import { Injectable } from '@angular/core';
-import { BehaviorSubject } from 'rxjs/internal/BehaviorSubject';
 import { ITodo } from './interfaces/todo';
+import { Subject } from 'rxjs/internal/Subject';
 
 @Injectable({
   providedIn: 'root'
 })
 export class TodoService {
-  myTodoStream = new BehaviorSubject<ITodo>({ description: 'init', time: 'init' });
+  myTodoStream = new Subject<ITodo>();
   data$ = this.myTodoStream.asObservable();
 
   constructor() { }
 
-  addToMytodo(todo: ITodo) {
+  addToMytodo(todo: ITodo): void {
     this.myTodoStream.next(todo);
   }
 }
