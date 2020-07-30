@@ -9,12 +9,21 @@ import { ITodo } from 'src/app/interfaces/todo';
 })
 export class RightComponentComponent implements OnInit {
   finiTodos: ITodo[] = [];
+  indexTokaLeft: number;
   constructor(private todoService: TodoService) {
 
   }
 
   ngOnInit(): void {
-    this.todoService.end$.subscribe((value) => this.finiTodos.push(value))
+    this.todoService.end$.subscribe(({ todo, indexFromLeft }) => {
+      this.indexTokaLeft = indexFromLeft;
+      this.finiTodos.push(todo);
+    });
+  }
+
+  restaurer(todoRestaurer) {
+    console.log("on ibi", todoRestaurer);
+    this.todoService.restaurer({ todo: todoRestaurer, index: this.indexTokaLeft });
   }
 
 }

@@ -1,8 +1,9 @@
  <li class="list-group-item mb-2">
    <div *ngIf="!isEditMode">
      {{myTodo?.description}} / {{myTodo?.time}}
-     <i (click)="done()" class="btn btn-success ml-3">done</i>
-     <i (click)="edit()" class="btn btn-warning ml-3">edit</i>
+     <i (click)="done()" class="btn btn-success ml-3">{{appartenance == 'right' ? 'restaurer' : 'done'}}</i>
+     <i *ngIf="appartenance == 'left'" (click)="edit()" class="btn btn-warning ml-3">edit</i>
+     <i *ngIf="appartenance == 'left'" (click)="delete()" class="btn btn-warning ml-3">delete</i>
    </div>
    <!-- when on edit mode -->
    <div style="max-width: 300px;

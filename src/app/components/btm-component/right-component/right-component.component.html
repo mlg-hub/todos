@@ -2,7 +2,8 @@
   <h5 class="title">My done todo list</h5>
   <ul class="list-group list-group-flush">
     <div *ngFor="let todo of finiTodos">
-      <app-todo-component [myTodo]="todo"></app-todo-component>
+      <app-todo-component [myTodo]="todo" [appartenance]="'right'" (restoreComp)="restaurer($event)">
+      </app-todo-component>
     </div>
   </ul>
 </div>

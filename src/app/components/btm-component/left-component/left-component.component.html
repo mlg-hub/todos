@@ -2,7 +2,8 @@
   <h5 class="title">My todo list</h5>
   <ul class="list-group list-group-flush">
     <div *ngFor="let i of todoFromService; let iter = index">
-      <app-todo-component (finiTodo)="saveFiniTodo($event)" [myTodo]="i"></app-todo-component>
+      <app-todo-component (finiTodo)="saveFiniTodo($event)" (deleteComp)="deleteThisComp($event)" [myTodo]="i"
+        [index]="iter"></app-todo-component>
     </div>
 
   </ul>
